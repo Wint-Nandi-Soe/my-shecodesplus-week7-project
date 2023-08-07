@@ -10,11 +10,12 @@
 }
 .wrapper{
     padding: 20px;
-    border: 1px solid #dadde1;
+    border: 1px solid #360ff7;
     border-radius: 5px; 
+    text-transform: capitalize;
     }
 h1{
-    color: #878787;
+    color: #360ff7;
     font-size: 24px;
     font-weight: 100;
     line-height: 28px;
@@ -52,4 +53,5 @@ li{
     font-size: 16px;
     top: -34px;
     }
+    
 
