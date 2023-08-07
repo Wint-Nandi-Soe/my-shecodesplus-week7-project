@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WNDS's Weather App</title>
+    <link rel="stylesheet" href="src/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+</head>
+<body>
+    <div class="main">
+        <div class="wrapper">
+            <form id="class-form">
+                <div class="row"> 
+                    <div class="col-9"> 
+                        <input type="search"  class="form-control" placeholder="Type a city..." id="city-input" autocomplete="off"/>
+                    </div> 
+                    <div class="col-3">
+                        <input type="submit" id="btn" value="Search" class="btn btn-primary w-100"/>
+                    </div>
+                </div>
+            </form>
+            <div class="header">
+                <h1 id="city">NewYork</h1>
+            <ul>
+                <li>Last Updated: <span id="date"></span></li>
+                <li id="description">Description</li>
+            </ul>
+            </div>
+            <div class="row">
+                <div class="col-6">
+                    <div class="image-wrapper">
+                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAflBMVEX///8AAADAwMDo6Ojl5eX7+/v09PSenp4vLy+ZmZk2NjbLy8tXV1ff39/v7+9wcHB5eXnV1dVmZmbNzc20tLQQEBB7e3tRUVGLi4s8PDyoqKgpKSnX19cjIyMJCQmSkpKDg4MYGBinp6dfX19JSUlsbGyxsbGcnJwXFxceHh7oU6ljAAAEqElEQVR4nO3ba3eiMBAG4AaJoMjFSxW1VavV1v//B5dMoLUS0JVQkp73+bJuDnpmSkwmCT49AQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAB0gAdh1yG0iy8Z87oOolUOy3QdRKt2fz7DUZbgqOsgNHkJ+uVG7mcZbn8/mDasGFuXU3RFJ511EE4LPrNUJqXWqcjQ7SCcFiyVd8sTrYrea6NA5MKiq9Zx1nboJJ4W0LywuG6dLZM/cgszYthkq66jaNOL8ib+KWmW4U6+DE/J0l+v/eVkP1ZcGdo6vKavMc/+iQbP7NLuKp/+4esvYaX+jpVMLldQzsbuSfK0KSd4WbnxuWywNsNJkdI59vZ7b+4X/3+Xk0Z4vsrYNgMZ//L0NfX3ZwvZtqGeKl+/Bd2F2FAi4h86PxvHi++OSS9ii4sAUaWl5eY9JfbZl38Cp3yBRcL9i6qZqgEqB5yVxTewDi0U//ae1FS59rBEz+3d0fNomJ23H41ePNgu8/lumDq8/uKlfathd3dVv8yVo0zBse2bGMWK4mxSV4ytxa3+tfgaWynLT8YG1W/xbKpHeVF/Po+2TjANnMHh/LMAVaAZw5LpPsrHl8Xse/jvOyPZ6Peq3sbUFY+B+JpSWV/Xz2OZ+GvVrCfq0/KeqoneWdXdkGuLdcW8IZaGVhxiyEW8eq9ebptWbJGmlmQok6gaMaY16e8syZAGzep9UZrYn5UD6rH69pqEZrW45oJd5ZAptjSSbNRNFttTaG79JnYKN3VrBDnSqg4T85t/yCfOxMxnGKgTftReMqvoxvTWcbFXI/pySzE2Qzeg/hI6+H0vt4tC9plf7MexytqgQ5EYZ26t8rYi+vloMYrT2XcSkWg9Zi/4YDSkBN9aDfVBYquJ3doLfLksxd+9/EubXryVu2MvSYyswlcVo8hPP88tWCpqnJAKul8IsQl3lYpxcnnzwhG74uRLfKNXFn2v2LC4XTyHZ3YeTeJj/n3LbOm4wujTRe+75yW3r+678svHXW94cSvNnABJ7zLO/+xqzmfxRoOPwIMixuFhnqoOdevlOzoGL34dGeHr4NFe9kHvn2oNSqd8ehvc2A+tQyvjs76Q9OLyBjYbJaij1pez3aHg/KYnDnQTzVwxUZ3WfJuTFhxmPqU40RMaf2WGLvBdXbXI9q6KtgPexYqgERqR/38ubZ8ooocN5okv0Vv2SXsNH6TbnYXoHcQ+soGP0UT6hkCxp7/T8klajfV9e0R/N/CUm2ru2qPduy3MLL6n2u4hFwuwmvPTrri6Jgtjf3pBZbeWv7yjpfhrga+r2BLVX9XBYqfonEXD3jR10l3zz9GPBlMNE/XR1KJNHkI0fx6NxmTFWYYJqPRuenIbbQzeqKGFXcOpuk+bkUdNEWkXNN4KdKmnq0++jSB/P3B4OMCT3KszcpjJ5cfS3kM5OsOHdsp/WZ4ii0+h27ufG57mxZa+2QkWDwk9zjf4TCbnqH/sc6fUxGqtxDvfzkRpM7fl+XXuxMPb+VzxjzNb8iM8CgPnfkEYWdE9AQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMAy/wDT2igtD5yxlAAAAABJRU5ErkJggg==" alt="clear" class="float-left">
+                     <strong id="temperature">14</strong>
+                     <span id="unit">
+                        <a href="#" id="celsius" class="active">°C</a> |
+                        <a href="#" id="fahrenheit">°F</a>
+                     </span>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <ul>
+                        <li>Humidity: <span id="humidity"></span> %</li>
+                        <li>Wind: <span id="wind"></span> km/h</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <small><a href="#" target="_blank">Open Source Code</a> by Wint Nandi Soe</small>
+    </div>
+    <script src="src/calculate.js"></script>
+</body>
+</html>
